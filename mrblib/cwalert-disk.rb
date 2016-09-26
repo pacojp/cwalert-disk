@@ -39,12 +39,25 @@ class Checker
   end
 end
 
+def usage
+  "cwalert-disk CONFIG_FILE"
+end
+
 def __main__(argv)
+  if argv.size != 2
+    usage
+    exit
+  end
+
   case argv[1]
   when "version"
     puts "v#{CwalertDisk::VERSION}"
   else
     config_file = argv[1]
+    unless File.exist?(config_file)
+      usage
+      exit
+    end
     j = File.read(config_file)
     Checker.new(JSON.parse(j)).check
   end

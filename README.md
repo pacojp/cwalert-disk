@@ -8,3 +8,11 @@
 * centos6系（Amazon Linux含む）のみ確認
 * docker、、、なにそれ、うまいの？（クロスコンパイル系は一旦コメントアウト）
 
+## install
+
+```
+git clone https://github.com/pacojp/cwalert-disk.git
+
+
+```
+
