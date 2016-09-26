@@ -40,7 +40,7 @@ class Checker
 end
 
 def usage
-  puts "cwalert-disk CONFIG_FILE"
+  puts "Usage: cwalert-disk CONFIG_FILE"
 end
 
 def __main__(argv)
