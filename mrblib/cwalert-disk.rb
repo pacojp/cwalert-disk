@@ -19,19 +19,19 @@ class Checker
       usage = $1.to_i
       usage > warning  && state = :warning
       usage > critical && state = :critical
-      proceed_by_state state, usage
+      proceed_with_state state, usage
     else
       "disk size chekck format error(not your fault)"
     end
   end
 
-  def proceed_by_state(state, usage)
+  def proceed_with_state(state, usage)
     return if state == :normal
     return if state == :warning && !warning_hours.include?(Time.now.hour)
-    to_cw ";( disk usage #{state}", "#{state}! disk usage is #{usage}%"
+    report ";( disk usage #{state}", "#{state}! disk usage is #{usage}%"
   end
 
-  def to_cw(title, message)
+  def report(title, message)
     tos = users_to.map{ |u| "[To:#{u}]" }.join("\n")
     tos += "\n" if tos.size > 0
     message = %|[info][title][#{hostname}] #{title}[/title]#{message}[/info]|
