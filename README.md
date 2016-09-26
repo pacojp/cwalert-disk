@@ -7,6 +7,7 @@
 * マウントポイントが / のみ対応
 * centos6系（Amazon Linux含む）のみ確認
 * docker、、、なにそれ、うまいの？（クロスコンパイル系は一旦コメントアウト）
+* そもそもディクスサイズの確認方法が力技&絶対にNGな環境があるはず
 
 ## install
 
@@ -15,6 +16,16 @@ git clone https://github.com/pacojp/cwalert-disk.git
 cd cwalert-disk/
 rake
 ./mruby/bin/cwalert-disk YOUR_CONFIG_FILE_PATH
+```
+
+or
+
+amazon linux
+
+```
+curl -L -o cwalert-disk https://github.com/pacojp/cwalert-disk/blob/master/bin/cwalert-disk-amazon-linux-x86_64?raw=true
+chmod 755 cwalert-disk
+./cwalert-disk YOUR_CONFIG_FILE_PATH
 ```
 
 ## config file format
