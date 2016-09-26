@@ -46,7 +46,7 @@ end
 def __main__(argv)
   if argv.size != 2
     usage
-    exit
+    return
   end
 
   case argv[1]
@@ -56,7 +56,7 @@ def __main__(argv)
     config_file = argv[1]
     unless File.exist?(config_file)
       usage
-      exit
+      return
     end
     j = File.read(config_file)
     Checker.new(JSON.parse(j)).check
