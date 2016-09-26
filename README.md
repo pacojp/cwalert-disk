@@ -35,7 +35,7 @@ rake
 optionals
 
 * hostname
-* warning_hours
+* warning-hours
 * users-to
 
 ## usage
