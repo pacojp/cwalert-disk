@@ -21,7 +21,7 @@ class Checker
       usage > critical && state = :critical
       proceed_with_state state, usage
     else
-      "disk size chekck format error(not your fault)"
+      puts "disk size chekck format error(not your fault)"
     end
   end
 
