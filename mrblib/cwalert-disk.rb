@@ -35,7 +35,7 @@ class Checker
     tos = users_to.map{ |u| "[To:#{u}]" }.join("\n")
     tos += "\n" if tos.size > 0
     message = %|[info][title][#{hostname}] #{title}[/title]#{message}[/info]|
-    `curl -s -S -X POST -H "X-ChatWorkToken: #{token}" -k -d "body=#{tos}#{message}" "https://api.chatwork.com/v1/rooms/#{room_id}/messages"`
+    `curl -s -S -X POST -H "X-ChatWorkToken: #{token}" -k -d "body=#{tos}#{message}" "https://api.chatwork.com/v2/rooms/#{room_id}/messages"`
   end
 end
 
